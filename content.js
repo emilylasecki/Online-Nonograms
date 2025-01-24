@@ -1,20 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Log to confirm the script is running
-    console.log("JavaScript file loaded and executed!");
-
-    // Try to find the #output element
-    const outputDiv = document.getElementById('output');
-
-    // Check if the element exists
-    if (outputDiv) {
-        outputDiv.textContent = "JavaScript is working! 🎉";
-        document.body.style.backgroundColor = "#f0f8ff"; // Change background color
-        console.log("Content updated successfully.");
-    } else {
-        console.error("Element with ID 'output' not found in the DOM.");
-    }
-});
-
+document.body.style.backgroundColor = "#f0f8ff";
+document.getElementById("myDiv").innerHTML = "hello";
+ 
 class GridSystem {
 	constructor(matrix) {
 		this.matrix = matrix;
@@ -80,10 +66,16 @@ class GridSystem {
 }
 
 const gridMatrix = [
-	[1, 1, 1, 1],
-	[1, 0, 0, 0],
-	[1, 0, 1, 0],
-	[1, 0, 0, 0]
+	[0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+	[0, 0, 0, 0, 0, 1, 1, 0, 0, 0],
+	[0, 0, 0, 0, 1, 1, 0, 0, 0, 1],
+    [0, 0, 0, 1, 1, 1, 1, 0, 1, 1],
+    [0, 1, 1, 1, 1, 1, 1, 0, 1, 0],
+    [1, 1, 0, 1, 1, 1, 1, 1, 1, 0],
+    [1, 1, 1, 1, 1, 1, 1, 0, 1, 0],
+    [0, 1, 1, 1, 1, 1, 1, 0, 1, 0],
+    [0, 0, 0, 1, 1, 1, 0, 0, 1, 1],
+    [0, 0, 0, 0, 0, 1, 1, 0, 0, 1],
 ];
 
 const gridSystem = new GridSystem(gridMatrix);
