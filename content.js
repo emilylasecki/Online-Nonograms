@@ -1,5 +1,5 @@
-document.body.style.backgroundColor = "#f0f8ff";
-document.getElementById("myDiv").innerHTML = "hello";
+document.body.style.backgroundColor = "#F8F8FF"//"#f0f8ff";
+document.getElementById("myDiv").innerHTML = "=ōwō=";
 /*
 for (var i = 0; i <10; i++) {
     var button = document.createElement("button");
@@ -12,19 +12,35 @@ for (var i = 0; i <10; i++) {
 const buttonNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 var br = document.createElement("br");
 for (var i =0; i<buttonNames.length; i++) {
-    document.body.appendChild(document.createElement("br"));  // only does this once lmao
+    document.body.appendChild(document.createElement("br"));
     for (var j=0; j<buttonNames.length; j++) {
         const button = document.createElement("button");
-        button.id = "btnItems"
-        button.textContent = '.';
+        button.id = "btnItems" +i +j; // adds position so can be referred to in other places
+        button.textContent = 'X';
+        button.style.borderBlockColor = "grey";
+        button.style.borderInlineColor = "grey";
+        button.style.color= "grey";
+        button.style.width = "40px";
+        button.style.height= "40px";
         button.addEventListener('click', () => {
-            if (button.style.backgroundColor == "red") {
+            if (button.style.backgroundColor == "grey") {
                 button.style.backgroundColor = "purple";
-                } else {
-                   button.style.backgroundColor="red";
+                button.style.color= "purple";
+                button.style.borderInlineColor = "purple";
+                button.style.borderBlockColor = "purple";
+                } else if (button.style.backgroundColor == "purple") {
+                   button.style.backgroundColor="darkgrey";
+                   button.style.color= "black";
+                   button.style.borderInlineColor = "darkgrey";
+                   button.style.borderBlockColor = "darkgrey";
+               } else {
+                   button.style.backgroundColor="grey";
+                   button.style.color= "grey";
+                   button.style.borderInlineColor = "grey";
+                   button.style.borderBlockColor = "grey";
                }
         });
-        button.style.backgroundColor = "red";
+        button.style.backgroundColor = "grey";
 
         button.onclick = function(el) {
        // button.addEventListener('click', () => {
