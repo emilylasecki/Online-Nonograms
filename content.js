@@ -65,10 +65,11 @@ for (var i =0; i<buttonNames.length; i++) {
         button.id = "cell" +i +j; // adds position so can be referred to in other places
         button.textContent = 'X';
         button.style.borderBlockColor = "darkgrey";
+        button.classList.add("resize-button");
         button.style.borderInlineColor = "darkgrey";
         button.style.color= "darkgrey";
-        button.style.width = "40px";
-        button.style.height= "40px";
+      //  button.style.width = "30px";
+      //  button.style.height= "30px";
         button.addEventListener('click', () => {
             if (button.style.backgroundColor == "darkgrey") {
                 button.style.backgroundColor = "black";
