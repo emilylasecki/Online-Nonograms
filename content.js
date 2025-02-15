@@ -56,6 +56,7 @@ colClues = [
 
 rowCluesNum = 0;  //change this to the number of cols in row clues
 
+document.getElementById("myDiv").innerHTML = "=ōwō=";
 const buttonNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 const column = document.getElementById("col2");
 const cluerow = document.getElementById("col1");
@@ -63,6 +64,8 @@ for (i=0; i<rowCluesNum; i++){  // bring the clues down for clues on top - may n
     cluerow.appendChild(document.createElement("br"));
 }
 
+
+// column clues
 for (var m=0; m<10; m++) {
     cluerow.appendChild(document.createElement("br"));
     for (var k =0; k<3; k++) {
@@ -78,25 +81,32 @@ for (var m=0; m<10; m++) {
         cluerow.appendChild(button);
     }
 }
-//cluerow.appendChild(button);
-/*
-for (var j=0; j<buttonNames.length; j++) {
-    const button = document.createElement("button");
-    button.id = "cell" +i +j; // adds position so can be referred to in other places
-    button.textContent = 'X';
-    button.style.borderBlockColor = "darkgrey";
-    button.classList.add("resize-button");
-    button.style.borderInlineColor = "darkgrey";
-    button.style.color= "darkgrey";
-} */
+
+//row clues
+for (var m=0; m<2; m++) {
+    column.appendChild(document.createElement("br"));
+    for (var k =0; k<10; k++) {
+        const button = document.createElement("button");
+        button.id = "cluecol0" + k;
+        button.style.color= "black";
+        button.textContent = rowClues[k][m];
+        if (button.textContent == "0") {
+            button.style.color = "grey";
+        }
+        button.style.backgroundColor="grey";
+        button.classList.add("colInactive");  //colInactive
+        button.style.borderColor="grey";
+        console.log(k);
+        //cluerow.appendChild(document.createElement("br"));
+        column.appendChild(button);
+    }
+}
 
 
-//document.getElementById("col2").innerHTML = "." + colClues[0][0] + " " + colClues[1][0] + ' ' + colClues[2][0] + " " + colClues[3][0] + ' ' + colClues[4][0] + " " + colClues[4][0] + ' ' + colClues[5][0] + " " + colClues[6][0] + ' '+ colClues[7][0] + " " + colClues[8][0] + ' ' + colClues[9][0]; //horizontal
-//document.getElementById("col1").innerHTML = "." + rowClues[0][0] + "" + rowClues[1][0] + '' + rowClues[2][0] + "" + rowClues[3][0] + '' + rowClues[4][0] + "" + rowClues[4][0] + '' + rowClues[5][0] + "" + rowClues[6][0] + ''+ rowClues[7][0] + "" + rowClues[8][0] + '' + rowClues[9][0]; //vertical text
-//var br = document.createElement("br");
+// entire grid
 for (var i =0; i<buttonNames.length; i++) {
     column.appendChild(document.createElement("br"));
-    document.getElementById("myDiv").innerHTML = "=ōwō=";
+   // document.getElementById("myDiv").innerHTML = "=ōwō=";
     for (var j=0; j<buttonNames.length; j++) {
         const button = document.createElement("button");
         button.id = "cell" +i +j; // adds position so can be referred to in other places
@@ -137,11 +147,6 @@ for (var i =0; i<buttonNames.length; i++) {
 }
 
 }
-
-
-
-
-
 
 
 // do some loopy boi to display a lot of these friends and toggle the corresponding one
