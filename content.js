@@ -54,13 +54,50 @@ colClues = [
 
 ]
 
+rowCluesNum = 0;  //change this to the number of cols in row clues
+
 const buttonNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-var br = document.createElement("br");
+const column = document.getElementById("col2");
+const cluerow = document.getElementById("col1");
+for (i=0; i<rowCluesNum; i++){  // bring the clues down for clues on top - may need to do this differently
+    cluerow.appendChild(document.createElement("br"));
+}
+
+for (var m=0; m<10; m++) {
+    cluerow.appendChild(document.createElement("br"));
+    for (var k =0; k<3; k++) {
+        const button = document.createElement("button");
+        button.id = "cluecol0" + k;
+        button.textContent = colClues[m][k];
+        button.style.color= "black";
+        button.style.backgroundColor="grey";
+        button.classList.add("buttonInactive");
+        button.style.borderColor="grey";
+        console.log(k);
+        //cluerow.appendChild(document.createElement("br"));
+        cluerow.appendChild(button);
+    }
+}
+//cluerow.appendChild(button);
+/*
+for (var j=0; j<buttonNames.length; j++) {
+    const button = document.createElement("button");
+    button.id = "cell" +i +j; // adds position so can be referred to in other places
+    button.textContent = 'X';
+    button.style.borderBlockColor = "darkgrey";
+    button.classList.add("resize-button");
+    button.style.borderInlineColor = "darkgrey";
+    button.style.color= "darkgrey";
+} */
+
+
+//document.getElementById("col2").innerHTML = "." + colClues[0][0] + " " + colClues[1][0] + ' ' + colClues[2][0] + " " + colClues[3][0] + ' ' + colClues[4][0] + " " + colClues[4][0] + ' ' + colClues[5][0] + " " + colClues[6][0] + ' '+ colClues[7][0] + " " + colClues[8][0] + ' ' + colClues[9][0]; //horizontal
+//document.getElementById("col1").innerHTML = "." + rowClues[0][0] + "" + rowClues[1][0] + '' + rowClues[2][0] + "" + rowClues[3][0] + '' + rowClues[4][0] + "" + rowClues[4][0] + '' + rowClues[5][0] + "" + rowClues[6][0] + ''+ rowClues[7][0] + "" + rowClues[8][0] + '' + rowClues[9][0]; //vertical text
+//var br = document.createElement("br");
 for (var i =0; i<buttonNames.length; i++) {
-    document.body.appendChild(document.createElement("br"));
+    column.appendChild(document.createElement("br"));
     document.getElementById("myDiv").innerHTML = "=ōwō=";
     for (var j=0; j<buttonNames.length; j++) {
-        document.getElementById("meow").innerHTML = rowClues[0][0] + "" + rowClues[0][1]; //vertical text
         const button = document.createElement("button");
         button.id = "cell" +i +j; // adds position so can be referred to in other places
         button.textContent = 'X';
@@ -95,7 +132,8 @@ for (var i =0; i<buttonNames.length; i++) {
         button.onclick = function(el) {
             const li = document.createElement('li');
     }
-    document.body.appendChild(button);
+    column.appendChild(button);
+    
 }
 
 }
@@ -108,4 +146,4 @@ for (var i =0; i<buttonNames.length; i++) {
 
 // do some loopy boi to display a lot of these friends and toggle the corresponding one
 // issue now is how to check for win status?
-// will ponder this and come back with answers
+// extract the index of each cell and compare to the solution

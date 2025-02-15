@@ -3,17 +3,28 @@
 .vertical-text {
     writing-mode: vertical-rl;
     text-orientation: upright;
-    font-size: 24px;
+    font-size: 10px;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.column {
-    flex: 50%;
+.column1 {
+    flex: 30%;
     padding: 10px;
-    height: 300px;
+    height: 500px;
+ /*   writing-mode: vertical-rl;
+    text-orientation: upright; */
+    font-size: 1vw; /* need to find a way to adjust this properly */
+   /* display: flex; */
+}
+
+.column2 {
+    flex:70%;
+    padding:10px;
+    height:500px;
+    font-size: 1vw;
 }
   
   /* Clear floats after the columns */
@@ -26,3 +37,11 @@
     padding: 1% 1.2%;   /* need to fix this to flex on screen size */
     cursor: pointer;
   }
+
+.buttonInactive {
+  padding: 2.31% 2%;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* put rows and columns in buttons that match background so flex correctly
