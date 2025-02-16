@@ -13,17 +13,18 @@
 .column1 {
     flex: 30%;
     padding: 10px;
-    height: 500px;
+    height: 60%;
  /*   writing-mode: vertical-rl;
     text-orientation: upright; */
     font-size: 1vw; /* need to find a way to adjust this properly */
    /* display: flex; */
+   text-align: right;
 }
 
 .column2 {
     flex:70%;
     padding:10px;
-    height:500px;
+    height: 60%;
     font-size: 1vw;
 }
   
@@ -46,6 +47,9 @@
   pointer-events: none;
   font-family:monospace;
   font-size: 1vw;
+/*  margin-left: 0; 
+  margin-right: auto; */
+ /* justify-content: center; */
 }
 
 .colInactive {

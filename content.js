@@ -54,25 +54,40 @@ colClues = [
 
 ]
 
-rowCluesNum = 0;  //change this to the number of cols in row clues
+rowCluesNum = 3;  //change this to the number of cols in row clues
+colCluesNum =2;
 
 document.getElementById("myDiv").innerHTML = "=ōwō=";
 const buttonNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 const column = document.getElementById("col2");
 const cluerow = document.getElementById("col1");
-for (i=0; i<rowCluesNum; i++){  // bring the clues down for clues on top - may need to do this differently
+
+for (i=0; i<rowCluesNum; i++){  // createboxes in the dead space between the 2 clues so everything lines up
     cluerow.appendChild(document.createElement("br"));
+    for (j=0; j<colCluesNum; j++) {
+        const button = document.createElement("button");
+        button.id = "blank" +j + '' + i;
+        button.textContent = "X";
+        button.style.color= "grey";
+        button.style.backgroundColor="grey";
+        button.classList.add("buttonInactive");
+        button.style.borderColor="grey";
+        cluerow.appendChild(button);
+    }
 }
 
 
 // column clues
 for (var m=0; m<10; m++) {
     cluerow.appendChild(document.createElement("br"));
-    for (var k =0; k<3; k++) {
+    for (var k =0; k<2; k++) {
         const button = document.createElement("button");
         button.id = "cluecol0" + k;
-        button.textContent = colClues[m][k];
+        button.textContent = rowClues[m][k];
         button.style.color= "black";
+        if (button.textContent == "0") {
+            button.style.color = "grey";
+        }
         button.style.backgroundColor="grey";
         button.classList.add("buttonInactive");
         button.style.borderColor="grey";
@@ -83,13 +98,13 @@ for (var m=0; m<10; m++) {
 }
 
 //row clues
-for (var m=0; m<2; m++) {
+for (var m=0; m<3; m++) {
     column.appendChild(document.createElement("br"));
     for (var k =0; k<10; k++) {
         const button = document.createElement("button");
         button.id = "cluecol0" + k;
         button.style.color= "black";
-        button.textContent = rowClues[k][m];
+        button.textContent = colClues[k][m];
         if (button.textContent == "0") {
             button.style.color = "grey";
         }
