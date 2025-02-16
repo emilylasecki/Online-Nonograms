@@ -11,8 +11,8 @@
 }
 
 .column1 {
-    flex: 30%;
-    padding: 10px;
+    flex: 40%; /* 30*/
+    padding: 0px;
     height: 60%;
  /*   writing-mode: vertical-rl;
     text-orientation: upright; */
@@ -22,8 +22,8 @@
 }
 
 .column2 {
-    flex:70%;
-    padding:10px;
+    flex:60%;  /* 70 */
+    padding:0px;
     height: 60%;
     font-size: 1vw;
 }
@@ -42,7 +42,8 @@
   }
 
 .buttonInactive {
-  padding: 2.31% 2%;
+ /* padding: 2.335% 2.7%; */
+  padding: 1.5% 1.8%;
   cursor: not-allowed;
   pointer-events: none;
   font-family:monospace;

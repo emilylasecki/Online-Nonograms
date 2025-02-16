@@ -54,6 +54,8 @@ colClues = [
 
 ]
 
+
+// systematically extract these numbers?
 rowCluesNum = 3;  //change this to the number of cols in row clues
 colCluesNum =2;
 
@@ -80,7 +82,7 @@ for (i=0; i<rowCluesNum; i++){  // createboxes in the dead space between the 2 c
 // column clues
 for (var m=0; m<10; m++) {
     cluerow.appendChild(document.createElement("br"));
-    for (var k =0; k<2; k++) {
+    for (var k =0; k<colCluesNum; k++) {
         const button = document.createElement("button");
         button.id = "cluecol0" + k;
         button.textContent = rowClues[m][k];
@@ -98,7 +100,7 @@ for (var m=0; m<10; m++) {
 }
 
 //row clues
-for (var m=0; m<3; m++) {
+for (var m=0; m<rowCluesNum; m++) {
     column.appendChild(document.createElement("br"));
     for (var k =0; k<10; k++) {
         const button = document.createElement("button");
