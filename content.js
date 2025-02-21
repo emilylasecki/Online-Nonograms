@@ -13,19 +13,25 @@
 
 document.body.style.backgroundColor = "#F8F8FF"//"#f0f8ff";
 
+//const {colClues, rowClues, solMatrix} = require('./puzzles/penguin.js');
+/*
+import('./puzzles/penguin.js').then(({ colClues, rowClues, solMatrix }) => {
+    console.log(colClues, rowClues, solMatrix);
+    const colClues = colClues;
+}); */
+/*
+async function getMatrices() { 
+    const module = await import('./puzzles/penguin.js');
+    return module;
+}
 
-const solMatrix = [  // solution to the puzzle
-	[0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-	[0, 0, 0, 0, 0, 1, 1, 0, 0, 0],
-	[0, 0, 0, 0, 1, 1, 0, 0, 0, 1],
-    [0, 0, 0, 1, 1, 1, 1, 0, 1, 1],
-    [0, 1, 1, 1, 1, 1, 1, 0, 1, 0],
-    [1, 1, 0, 1, 1, 1, 1, 1, 1, 0],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-    [0, 1, 1, 1, 1, 1, 1, 0, 1, 0],
-    [0, 0, 0, 1, 1, 1, 0, 0, 1, 1],
-    [0, 0, 0, 0, 0, 1, 1, 0, 0, 1],
-];
+(async () => {
+    const { colClues, rowClues, solMatrix } = await getMatrices();
+    console.log('Now matrices are available:', colClues, rowClues, solMatrix);
+})(); */
+
+//import {colClues} from './puzzles/penguin.js';
+
 
 var workingMatrix = [  // current input by the user might not use
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -40,32 +46,51 @@ var workingMatrix = [  // current input by the user might not use
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ]
 
-rowClues  = [
-	[0,1],
-	[0,2],
-	[2,1],
-	[4,2],
-	[6,1],
-	[2,6],
-	[0,9],
-	[6,1],
-	[3,2],
-	[2,1],
+const solMatrix = [  // solution to the puzzle
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
+	[0, 0, 1, 0, 1, 1, 0, 1, 0, 0],
+    [0, 1, 0, 1, 0, 0, 1, 0, 1, 0],
+    [0, 1, 0, 0, 1, 1, 0, 0, 1, 0],
+    [0, 1, 1, 0, 1, 1, 0, 1, 1, 0],
+    [0, 1, 1, 1, 0, 0, 1, 1, 1, 0],
+    [1, 1, 1, 1, 0, 0, 1, 1, 1, 1],
+    [1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+    [1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+];
+
+const rowClues  = [
+	[0,0,0,0],
+	[0,0,0,4],
+	[0,1,2,1],
+	[1,1,1,1],
+	[0,1,2,1],
+	[0,2,2,2],
+	[0,0,3,3],
+	[0,0,4,4],
+	[0,0,3,3],
+	[0,0,3,3],
 ]
 
-colClues = [
-	[0,0,2],
-	[0,0,4],
-	[0,1,2],
-	[0,0,6],
+const colClues = [
+	[0,0,3],
 	[0,0,7],
-	[0,0,9],
-	[1,5,1],
-	[0,1,2],
-	[0,0,6],
+	[0,1,5],
+	[1,1,2],
 	[0,2,2],
+	[0,2,2],
+	[1,1,2],
+	[0,1,5],
+	[0,0,7],
+	[0,0,3],
 
 ]
+
+
+/*import {solMatrix} from './puzzles/penguin.js'
+import {rowClues} from './puzzles/penguin.js'
+import {colClues} from './puzzles/penguin.js' */
+
 
 
 
@@ -203,6 +228,7 @@ for (var i =0; i<buttonNames.length; i++) {
  console.log(count)
  if (count == 0) {
     console.log("you win!")
+    document.getElementById("myDiv").innerHTML="You Win!";
  }
 }
 
