@@ -35,10 +35,11 @@
 }
 
 .resize-button {
-    padding: 1% 1.2%;   /* need to fix this to flex on screen size */
+    padding: 1% 1.4%;   /* need to fix this to flex on screen size */
     cursor: pointer;
     font-family:monospace;
     font-size: 1vw;
+    border: 0.1vw, solid, #5c5c5b;
   }
 
 .buttonInactive {
@@ -48,17 +49,19 @@
   pointer-events: none;
   font-family:monospace;
   font-size: 1vw;
+  border: 0.1vw, solid, grey;
 /*  margin-left: 0; 
   margin-right: auto; */
  /* justify-content: center; */
 }
 
 .colInactive {
-  padding: 1% 1.2%;
+  padding: 1% 1.4%;
   cursor: not-allowed;
   pointer-events: none;
   font-family:monospace;
   font-size: 1vw;
+  border: 0.1vw, solid, grey;
 }
 
 /* put rows and columns in buttons that match background so flex correctly

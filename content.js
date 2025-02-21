@@ -87,7 +87,7 @@ for (i=0; i<colCluesNumber; i++){
         button.style.color= "#F8F8FF";
         button.style.backgroundColor="#F8F8FF";
         button.classList.add("buttonInactive");
-        button.style.borderColor="#F8F8FF";
+        //button.style.borderColor="#F8F8FF";
         cluerow.appendChild(button);
     }
 }
@@ -106,7 +106,7 @@ for (var m=0; m<10; m++) {
         }
         button.style.backgroundColor="#F8F8FF";
         button.classList.add("buttonInactive");
-        button.style.borderColor="#F8F8FF";
+       // button.style.borderColor="#F8F8FF";
       //  console.log(k);
         //cluerow.appendChild(document.createElement("br"));
         cluerow.appendChild(button);
@@ -126,7 +126,7 @@ for (var m=0; m<colCluesNumber; m++) {
         }
         button.style.backgroundColor="#F8F8FF";
         button.classList.add("colInactive");
-        button.style.borderColor="#F8F8FF";
+      //  button.style.borderColor="#F8F8FF";
         //console.log(k);
         //cluerow.appendChild(document.createElement("br"));
         column.appendChild(button);
@@ -142,9 +142,9 @@ for (var i =0; i<buttonNames.length; i++) {
         const button = document.createElement("button");
         button.id = "cell" +i +j; // adds position so can be referred to in other places
         button.textContent = 'X';
-        button.style.borderBlockColor = "darkgrey";
+       // button.style.borderBlockColor = "darkgrey";
         button.classList.add("resize-button");
-        button.style.borderInlineColor = "darkgrey";
+       // button.style.borderInlineColor = "darkgrey";
         button.style.color= "darkgrey";
       //  button.style.width = "30px";
       //  button.style.height= "30px";
@@ -152,8 +152,8 @@ for (var i =0; i<buttonNames.length; i++) {
             if (button.style.backgroundColor == "darkgrey") {
                 button.style.backgroundColor = "black";
                 button.style.color= "black";
-                button.style.borderInlineColor = "black";
-                button.style.borderBlockColor = "black";
+              //  button.style.borderInlineColor = "black";
+               // button.style.borderBlockColor = "black";
                 var x = (button.id).slice(-1);
                    var y = (button.id).slice(-2, -1);
                    console.log(x + " " + y);
@@ -169,13 +169,13 @@ for (var i =0; i<buttonNames.length; i++) {
                    checkWin()
                    button.style.backgroundColor="grey";
                    button.style.color= "black";
-                   button.style.borderInlineColor = "grey";
-                   button.style.borderBlockColor = "grey";
+                  // button.style.borderInlineColor = "grey";
+                  // button.style.borderBlockColor = "grey";
                } else {
                    button.style.backgroundColor="darkgrey";
                    button.style.color= "darkgrey";
-                   button.style.borderInlineColor = "darkgrey";
-                   button.style.borderBlockColor = "darkgrey";
+                  // button.style.borderInlineColor = "darkgrey";
+                  // button.style.borderBlockColor = "darkgrey";
                }
         });
         button.style.backgroundColor = "darkgrey";
@@ -189,14 +189,21 @@ for (var i =0; i<buttonNames.length; i++) {
 
 }
 function checkWin() {
+count = 0;
 for (var i =0; i<buttonNames.length; i++) {
     for (var j=0; j<buttonNames.length; j++) {
         if (workingMatrix[i][j] != solMatrix[i][j]) {
-            console.log("still solving");
+            count = count +1;
+           // console.log("still solving");
+            continue;
         }
     }
     // do something here for when everything matches
 }
+ console.log(count)
+ if (count == 0) {
+    console.log("you win!")
+ }
 }
 
 // issue now is how to check for win status?
