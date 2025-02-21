@@ -12,20 +12,20 @@
 
 .column1 {
     flex: 40%; /* 30*/
-    padding: 0px;
     height: 60%;
  /*   writing-mode: vertical-rl;
     text-orientation: upright; */
-    font-size: 1vw; /* need to find a way to adjust this properly */
+   /* need to find a way to adjust this properly */
    /* display: flex; */
    text-align: right;
+   min-width: 100px;
 }
 
 .column2 {
     flex:60%;  /* 70 */
     padding:0px;
     height: 60%;
-    font-size: 1vw;
+    min-width: 300px;
 }
   
   /* Clear floats after the columns */
@@ -40,6 +40,9 @@
     font-family:monospace;
     font-size: 1vw;
     border: 0.1vw, solid, #5c5c5b;
+    min-width: 25px;
+    min-height: 25px;
+    font-size:calc(12px + .2vw);
   }
 
 .buttonInactive {
@@ -48,8 +51,10 @@
   cursor: not-allowed;
   pointer-events: none;
   font-family:monospace;
-  font-size: 1vw;
+  font-size:calc(12px + .2vw);
   border: 0.1vw, solid, grey;
+  min-width: 25px;
+  min-height: 25px;
 /*  margin-left: 0; 
   margin-right: auto; */
  /* justify-content: center; */
@@ -60,8 +65,10 @@
   cursor: not-allowed;
   pointer-events: none;
   font-family:monospace;
-  font-size: 1vw;
+  font-size:calc(12px + .2vw);
   border: 0.1vw, solid, grey;
+  min-width: 25px;
+  min-height: 25px;
 }
 
 /* put rows and columns in buttons that match background so flex correctly
