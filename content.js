@@ -1,14 +1,15 @@
 // current issues:
 
 // make colors more appealing
-// make the border size and text size shift so that everything still looks nice on small screens
-// win condition checker
+
+// win condition checker - make visually better
 // define imports so that multiple levels can be selected
 // come up with method to toggle between levels
 // readme
 // info on page about nonograms and how to play
 // level difficulty rating?
 // figure out how to get on itch.io
+// maybe run on github pages?
 
 
 document.body.style.backgroundColor = "#F8F8FF"//"#f0f8ff";
@@ -47,42 +48,42 @@ var workingMatrix = [  // current input by the user might not use
 ]
 
 const solMatrix = [  // solution to the puzzle
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-	[0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
-	[0, 0, 1, 0, 1, 1, 0, 1, 0, 0],
-    [0, 1, 0, 1, 0, 0, 1, 0, 1, 0],
-    [0, 1, 0, 0, 1, 1, 0, 0, 1, 0],
-    [0, 1, 1, 0, 1, 1, 0, 1, 1, 0],
-    [0, 1, 1, 1, 0, 0, 1, 1, 1, 0],
-    [1, 1, 1, 1, 0, 0, 1, 1, 1, 1],
-    [1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
-    [1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+	[0, 1, 0, 1, 0, 0, 1, 1, 1, 1],
+	[0, 1, 1, 0, 0, 0, 1, 0, 0, 1],
+	[1, 1, 1, 1, 0, 0, 0, 0, 0, 1],
+    [0, 0, 1, 1, 0, 0, 0, 0, 1, 0],
+    [0, 0, 1, 1, 1, 1, 1, 1, 1, 0],
+    [0, 0, 1, 1, 1, 1, 1, 1, 1, 0],
+    [0, 0, 1, 1, 1, 1, 0, 1, 1, 0],
+    [0, 0, 1, 1, 0, 0, 0, 0, 1, 0],
+    [0, 0, 1, 1, 0, 0, 0, 0, 1, 0],
+    [0, 0, 1, 1, 0, 0, 0, 0, 1, 0],
 ];
 
-const rowClues  = [
-	[0,0,0,0],
-	[0,0,0,4],
-	[0,1,2,1],
-	[1,1,1,1],
-	[0,1,2,1],
-	[0,2,2,2],
-	[0,0,3,3],
-	[0,0,4,4],
-	[0,0,3,3],
-	[0,0,3,3],
+rowClues  = [
+	[1,1,4],
+	[2,1,1],
+	[0,4,1],
+	[0,2,1],
+	[0,0,7],
+	[0,0,7],
+	[0,4,2],
+	[0,2,1],
+	[0,2,1],
+	[0,2,1],
 ]
 
-const colClues = [
-	[0,0,3],
-	[0,0,7],
-	[0,1,5],
-	[1,1,2],
-	[0,2,2],
-	[0,2,2],
-	[1,1,2],
-	[0,1,5],
-	[0,0,7],
-	[0,0,3],
+colClues = [
+	[0,1],
+	[0,3],
+	[0,9],
+	[1,8],
+	[0,3],
+	[0,3],
+	[2,2],
+	[1,3],
+	[1,7],
+	[0,3],
 
 ]
 
@@ -102,6 +103,11 @@ const buttonNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 const column = document.getElementById("col2");
 const cluerow = document.getElementById("col1");
 
+const button1 = document.createElement("button");
+button1.textContent = "Clear Grid";
+
+button1.addEventListener("click", cleargrid);
+document.body.appendChild(button1);
 // createboxes in the dead space between the 2 clues so everything lines up
 for (i=0; i<colCluesNumber; i++){ 
     cluerow.appendChild(document.createElement("br"));
@@ -232,5 +238,16 @@ for (var i =0; i<buttonNames.length; i++) {
  }
 }
 
-// issue now is how to check for win status?
-// extract the index of each cell and compare to the solution
+
+function cleargrid() {
+    document.getElementById("myDiv").innerHTML="owo";
+    for (var i =0; i<buttonNames.length; i++) {
+        for (var j=0; j<buttonNames.length; j++) {
+           // button[i][j].style.color= "darkgrey";
+            workingMatrix[i][j] = 0;
+            newbutton = document.getElementById("cell" +i +""+j);
+            newbutton.style.backgroundColor = "darkgrey";
+            newbutton.style.color ="darkgrey";
+}
+    }
+}
