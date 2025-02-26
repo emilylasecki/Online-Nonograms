@@ -10,6 +10,8 @@
     align-items: center;
 }
 
+@media(max-width:600px) {
+
 .column1 {
     flex: 40%; /* 30*/
     height: 60%;
@@ -42,7 +44,9 @@
     border: 0.1vw, solid, #5c5c5b;
     min-width: 25px;
     min-height: 25px;
-    font-size:calc(12px + .2vw);
+    font-size:calc(11px + .2vw);
+    max-width: 35px;
+  max-height:35px;
   }
 
 .buttonInactive {
@@ -51,10 +55,12 @@
   cursor: not-allowed;
   pointer-events: none;
   font-family:monospace;
-  font-size:calc(12px + .2vw);
+  font-size:calc(11px + .2vw);
   border: 0.1vw, solid, grey;
   min-width: 25px;
   min-height: 25px;
+  max-width: 35px;
+  max-height:35px;
 /*  margin-left: 0; 
   margin-right: auto; */
  /* justify-content: center; */
@@ -65,10 +71,85 @@
   cursor: not-allowed;
   pointer-events: none;
   font-family:monospace;
-  font-size:calc(12px + .2vw);
+  font-size:calc(11px + .2vw);
   border: 0.1vw, solid, grey;
   min-width: 25px;
   min-height: 25px;
+  max-width: 35px;
+  max-height:35px;
+}
 }
 
-/* put rows and columns in buttons that match background so flex correctly
+/* put rows and columns in buttons that match background so flex correctly*/
+
+
+@media (min-width:600px) {
+
+
+  .column1 {
+    flex: 40%; /* 30*/
+    height: 60%;
+ /*   writing-mode: vertical-rl;
+    text-orientation: upright; */
+   /* need to find a way to adjust this properly */
+   /* display: flex; */
+   text-align: right;
+   min-width: 100px;
+}
+
+.column2 {
+    flex:60%;  /* 70 */
+    padding:0px;
+    height: 60%;
+    min-width: 300px;
+}
+  
+  /* Clear floats after the columns */
+
+.row {
+  display: flex;
+}
+
+.resize-button {
+    padding: 1% 1.4%;   /* need to fix this to flex on screen size */
+    cursor: pointer;
+    font-family:monospace;
+    font-size: 1vw;
+    border: 0.1vw, solid, #5c5c5b;
+    min-width: 35px;
+    min-height: 35px;
+    font-size:calc(11px + .2vw);
+    max-width: 35px;
+  max-height:35px;
+  }
+
+.buttonInactive {
+ /* padding: 2.335% 2.7%; */
+  padding: 1.5% 1.8%;
+  cursor: not-allowed;
+  pointer-events: none;
+  font-family:monospace;
+  font-size:calc(11px + .2vw);
+  border: 0.1vw, solid, grey;
+  min-width: 35px;
+  min-height: 35px;
+  max-width: 35px;
+  max-height:35px;
+/*  margin-left: 0; 
+  margin-right: auto; */
+ /* justify-content: center; */
+}
+
+.colInactive {
+  padding: 1% 1.4%;
+  cursor: not-allowed;
+  pointer-events: none;
+  font-family:monospace;
+  font-size:calc(11px + .2vw);
+  border: 0.1vw, solid, grey;
+  min-width: 35px;
+  min-height: 35px;
+  max-width: 35px;
+  max-height:35px;
+}
+}

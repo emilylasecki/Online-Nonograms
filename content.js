@@ -1,4 +1,4 @@
-// current issues:
+// current to do:
 
 // make colors more appealing
 
@@ -12,26 +12,8 @@
 // maybe run on github pages?
 
 
+
 document.body.style.backgroundColor = "#F8F8FF"//"#f0f8ff";
-
-//const {colClues, rowClues, solMatrix} = require('./puzzles/penguin.js');
-/*
-import('./puzzles/penguin.js').then(({ colClues, rowClues, solMatrix }) => {
-    console.log(colClues, rowClues, solMatrix);
-    const colClues = colClues;
-}); */
-/*
-async function getMatrices() { 
-    const module = await import('./puzzles/penguin.js');
-    return module;
-}
-
-(async () => {
-    const { colClues, rowClues, solMatrix } = await getMatrices();
-    console.log('Now matrices are available:', colClues, rowClues, solMatrix);
-})(); */
-
-//import {colClues} from './puzzles/penguin.js';
 
 
 var workingMatrix = [  // current input by the user might not use
@@ -48,50 +30,44 @@ var workingMatrix = [  // current input by the user might not use
 ]
 
 const solMatrix = [  // solution to the puzzle
-	[0, 1, 0, 1, 0, 0, 1, 1, 1, 1],
-	[0, 1, 1, 0, 0, 0, 1, 0, 0, 1],
-	[1, 1, 1, 1, 0, 0, 0, 0, 0, 1],
-    [0, 0, 1, 1, 0, 0, 0, 0, 1, 0],
-    [0, 0, 1, 1, 1, 1, 1, 1, 1, 0],
-    [0, 0, 1, 1, 1, 1, 1, 1, 1, 0],
-    [0, 0, 1, 1, 1, 1, 0, 1, 1, 0],
-    [0, 0, 1, 1, 0, 0, 0, 0, 1, 0],
-    [0, 0, 1, 1, 0, 0, 0, 0, 1, 0],
-    [0, 0, 1, 1, 0, 0, 0, 0, 1, 0],
+	[1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+	[1, 0, 0, 1, 0, 0, 1, 0, 0, 1],
+	[1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
+    [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+    [0, 0, 1, 0, 1, 1, 0, 1, 0, 0],
+    [1, 1, 1, 1, 0, 0, 1, 1, 1, 1],
+    [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
+    [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
 ];
 
 rowClues  = [
-	[1,1,4],
-	[2,1,1],
-	[0,4,1],
-	[0,2,1],
-	[0,0,7],
-	[0,0,7],
-	[0,4,2],
-	[0,2,1],
-	[0,2,1],
-	[0,2,1],
+	[0,0,3,3],
+	[1,1,1,1],
+	[0,2,4,2],
+	[0,0,0,6],
+	[0,1,2,1],
+	[0,0,4,4],
+	[0,0,0,6],
+	[0,0,0,10],
+	[0,0,0,4],
+	[0,0,0,6],
 ]
 
 colClues = [
-	[0,1],
-	[0,3],
-	[0,9],
-	[1,8],
-	[0,3],
-	[0,3],
-	[2,2],
-	[1,3],
-	[1,7],
-	[0,3],
+	[0,3,1,1],
+	[1,1,1,1],
+	[0,1,5,1],
+	[0,0,3,5],
+	[0,0,3,4],
+	[0,0,3,4],
+	[0,0,3,5],
+	[0,1,5,1],
+	[1,1,1,1],
+	[0,3,1,1],
 
 ]
-
-
-/*import {solMatrix} from './puzzles/penguin.js'
-import {rowClues} from './puzzles/penguin.js'
-import {colClues} from './puzzles/penguin.js' */
-
 
 
 
@@ -137,9 +113,6 @@ for (var m=0; m<10; m++) {
         }
         button.style.backgroundColor="#F8F8FF";
         button.classList.add("buttonInactive");
-       // button.style.borderColor="#F8F8FF";
-      //  console.log(k);
-        //cluerow.appendChild(document.createElement("br"));
         cluerow.appendChild(button);
     }
 }
@@ -157,9 +130,6 @@ for (var m=0; m<colCluesNumber; m++) {
         }
         button.style.backgroundColor="#F8F8FF";
         button.classList.add("colInactive");
-      //  button.style.borderColor="#F8F8FF";
-        //console.log(k);
-        //cluerow.appendChild(document.createElement("br"));
         column.appendChild(button);
     }
 }
@@ -168,30 +138,21 @@ for (var m=0; m<colCluesNumber; m++) {
 // entire grid
 for (var i =0; i<buttonNames.length; i++) {
     column.appendChild(document.createElement("br"));
-   // document.getElementById("myDiv").innerHTML = "=ōwō=";
     for (var j=0; j<buttonNames.length; j++) {
         const button = document.createElement("button");
         button.id = "cell" +i +j; // adds position so can be referred to in other places
         button.textContent = 'X';
-       // button.style.borderBlockColor = "darkgrey";
         button.classList.add("resize-button");
-       // button.style.borderInlineColor = "darkgrey";
         button.style.color= "darkgrey";
-      //  button.style.width = "30px";
-      //  button.style.height= "30px";
         button.addEventListener('click', () => {
             if (button.style.backgroundColor == "darkgrey") {
                 button.style.backgroundColor = "black";
                 button.style.color= "black";
-              //  button.style.borderInlineColor = "black";
-               // button.style.borderBlockColor = "black";
                 var x = (button.id).slice(-1);
                    var y = (button.id).slice(-2, -1);
                    console.log(x + " " + y);
                    workingMatrix[y][x] = 1;
                    checkWin()
-               // console.log(button.id);  // can use button.id to get index
-                // get the index m and n for the matrix
                 } else if (button.style.backgroundColor == "black") {
                    var x = (button.id).slice(-1);
                    var y = (button.id).slice(-2, -1);
@@ -200,13 +161,9 @@ for (var i =0; i<buttonNames.length; i++) {
                    checkWin()
                    button.style.backgroundColor="grey";
                    button.style.color= "black";
-                  // button.style.borderInlineColor = "grey";
-                  // button.style.borderBlockColor = "grey";
                } else {
                    button.style.backgroundColor="darkgrey";
                    button.style.color= "darkgrey";
-                  // button.style.borderInlineColor = "darkgrey";
-                  // button.style.borderBlockColor = "darkgrey";
                }
         });
         button.style.backgroundColor = "darkgrey";
@@ -225,13 +182,11 @@ for (var i =0; i<buttonNames.length; i++) {
     for (var j=0; j<buttonNames.length; j++) {
         if (workingMatrix[i][j] != solMatrix[i][j]) {
             count = count +1;
-           // console.log("still solving");
             continue;
         }
     }
-    // do something here for when everything matches
 }
- console.log(count)
+// console.log(count)
  if (count == 0) {
     console.log("you win!")
     document.getElementById("myDiv").innerHTML="You Win!";
@@ -243,7 +198,6 @@ function cleargrid() {
     document.getElementById("myDiv").innerHTML="owo";
     for (var i =0; i<buttonNames.length; i++) {
         for (var j=0; j<buttonNames.length; j++) {
-           // button[i][j].style.color= "darkgrey";
             workingMatrix[i][j] = 0;
             newbutton = document.getElementById("cell" +i +""+j);
             newbutton.style.backgroundColor = "darkgrey";
