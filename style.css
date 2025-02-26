@@ -10,6 +10,11 @@
     align-items: center;
 }
 
+.title {
+  align-items: center;
+  text-align: center;
+}
+
 @media(max-width:600px) {
 
 .column1 {

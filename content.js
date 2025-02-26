@@ -2,7 +2,7 @@
 
 // make colors more appealing
 
-// win condition checker - make visually better
+// win condition checker - make visually better?
 // define imports so that multiple levels can be selected
 // come up with method to toggle between levels
 // readme
@@ -69,12 +69,12 @@ colClues = [
 
 ]
 
-
+puzzlename = "Level 1"
 
 colCluesNumber = colClues[0].length;
 rowCluesNumber = rowClues[0].length;
 
-document.getElementById("myDiv").innerHTML = "=ōwō=";
+document.getElementById("myDiv").innerHTML = puzzlename;
 const buttonNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 const column = document.getElementById("col2");
 const cluerow = document.getElementById("col1");
@@ -190,18 +190,26 @@ for (var i =0; i<buttonNames.length; i++) {
  if (count == 0) {
     console.log("you win!")
     document.getElementById("myDiv").innerHTML="You Win!";
- }
+    for (var i =0; i<buttonNames.length; i++) {
+        for (var j=0; j<buttonNames.length; j++) {
+          //  newbutton = document.getElementById("cell"+ i +'' +j);
+            document.getElementById("cell"+ i +'' +j).disabled = true; 
+
+            }
+        }
+    }
 }
 
 
 function cleargrid() {
-    document.getElementById("myDiv").innerHTML="owo";
+    document.getElementById("myDiv").innerHTML=puzzlename;
     for (var i =0; i<buttonNames.length; i++) {
         for (var j=0; j<buttonNames.length; j++) {
             workingMatrix[i][j] = 0;
             newbutton = document.getElementById("cell" +i +""+j);
             newbutton.style.backgroundColor = "darkgrey";
             newbutton.style.color ="darkgrey";
+            document.getElementById("cell"+ i +'' +j).disabled = false; 
 }
     }
 }
