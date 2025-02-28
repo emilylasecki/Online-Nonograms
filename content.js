@@ -11,8 +11,8 @@
 // figure out how to get on itch.io
 // maybe run on github pages?
 // make toggle between levels look nice
-// fix bug where selecting a different puzzle makes it creep down the page
 
+// fix error in deleting br elements
 
 
 document.body.style.backgroundColor = "#F8F8FF";
@@ -420,19 +420,37 @@ function cleargrid() {
 
 function deleteGrid() {
     for (var i =0; i<buttonNames.length; i++) {
+        try {
+            brElement = document.querySelector('br');
+            brElement.remove();
+        } catch (error) {
+            console.log(error)  // good - no error
+        }
         for (var j=0; j<buttonNames.length; j++) {
             workingMatrix[i][j] = 0;
             newbutton = document.getElementById("cell" +i +""+j);
             newbutton.remove();
             }
         }
-    for (i=0; i<colCluesNumber; i++){        
+    for (i=0; i<colCluesNumber; i++){   
         for (j=0; j<rowCluesNumber; j++) {
+            try {
+                brElement = document.querySelector('br');
+                brElement.remove();
+            } catch (error) {
+                console.log(error);  // no error
+            }
             newbutton = document.getElementById("blank" + j +""+i);
             newbutton.remove();
             }
         }
     for (var m=0; m<10; m++) {
+        try {
+            brElement = document.querySelector('br');
+            brElement.remove();
+        } catch (error) {
+            console.log(error); //error
+        }
         for (var k =0; k<rowCluesNumber; k++) {
             newbutton = document.getElementById("rowcol0" + k);
             newbutton.remove();
