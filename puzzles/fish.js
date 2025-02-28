@@ -11,7 +11,7 @@ const solMatrix = [  // solution to the puzzle
     [0, 0, 0, 0, 0, 1, 1, 0, 0, 1],
 ];
 
-rowClues  = [
+const rowClues  = [
 	[0,1],
 	[0,2],
 	[2,1],
@@ -24,7 +24,7 @@ rowClues  = [
 	[2,1],
 ]
 
-colClues = [
+const colClues = [
 	[0,0,2],
 	[0,0,4],
 	[0,1,2],

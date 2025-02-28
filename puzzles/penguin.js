@@ -37,9 +37,3 @@ const colClues = [
 	[0,0,3],
 
 ]
-
-module.exports = {
-    colClues,
-    rowClues,
-    solMatrix
-}; 

@@ -3,7 +3,7 @@
 // make colors more appealing
 
 // win condition checker - make visually better?
-// define imports so that multiple levels can be selected - put all in this file
+
 
 // readme
 // info on page about nonograms and how to play
@@ -15,10 +15,10 @@
 
 
 
-document.body.style.backgroundColor = "#F8F8FF"//"#f0f8ff";
+document.body.style.backgroundColor = "#F8F8FF";
 
 
-var workingMatrix = [  // current input by the user might not use
+var workingMatrix = [ 
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -32,7 +32,7 @@ var workingMatrix = [  // current input by the user might not use
 ]
 
 // cat
-
+// --------------------------------------------------------------------------------------------
 const CatsolMatrix = [  // solution to the puzzle
 	[1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
 	[1, 0, 0, 1, 0, 0, 1, 0, 0, 1],
@@ -74,7 +74,7 @@ const CatcolClues = [
 ]
 
 // dog puzzle
-
+// --------------------------------------------------------------------------------------------------
 const DogsolMatrix = [  // solution to the puzzle
 	[0, 1, 0, 1, 0, 0, 1, 1, 1, 1],
 	[0, 1, 1, 0, 0, 0, 1, 0, 0, 1],
@@ -115,6 +115,93 @@ const DogcolClues = [
 
 ]
 
+// fish
+// ----------------------------------------------------------------------------------------------------
+
+const FishsolMatrix = [  // solution to the puzzle
+	[0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+	[0, 0, 0, 0, 0, 1, 1, 0, 0, 0],
+	[0, 0, 0, 0, 1, 1, 0, 0, 0, 1],
+    [0, 0, 0, 1, 1, 1, 1, 0, 1, 1],
+    [0, 1, 1, 1, 1, 1, 1, 0, 1, 0],
+    [1, 1, 0, 1, 1, 1, 1, 1, 1, 0],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+    [0, 1, 1, 1, 1, 1, 1, 0, 1, 0],
+    [0, 0, 0, 1, 1, 1, 0, 0, 1, 1],
+    [0, 0, 0, 0, 0, 1, 1, 0, 0, 1],
+];
+
+const FishrowClues  = [
+	[0,1],
+	[0,2],
+	[2,1],
+	[4,2],
+	[6,1],
+	[2,6],
+	[0,9],
+	[6,1],
+	[3,2],
+	[2,1],
+]
+
+const FishcolClues = [
+	[0,0,2],
+	[0,0,4],
+	[0,1,2],
+	[0,0,6],
+	[0,0,7],
+	[0,0,9],
+	[1,5,1],
+	[0,1,2],
+	[0,0,6],
+	[0,2,2],
+
+]
+
+// penguin
+// -------------------------------------------------------------------------------------------------
+
+const PenguinsolMatrix = [  // solution to the puzzle
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
+	[0, 0, 1, 0, 1, 1, 0, 1, 0, 0],
+    [0, 1, 0, 1, 0, 0, 1, 0, 1, 0],
+    [0, 1, 0, 0, 1, 1, 0, 0, 1, 0],
+    [0, 1, 1, 0, 1, 1, 0, 1, 1, 0],
+    [0, 1, 1, 1, 0, 0, 1, 1, 1, 0],
+    [1, 1, 1, 1, 0, 0, 1, 1, 1, 1],
+    [1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+    [1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+];
+
+const PenguinrowClues  = [
+	[0,0,0,0],
+	[0,0,0,4],
+	[0,1,2,1],
+	[1,1,1,1],
+	[0,1,2,1],
+	[0,2,2,2],
+	[0,0,3,3],
+	[0,0,4,4],
+	[0,0,3,3],
+	[0,0,3,3],
+]
+
+const PenguincolClues = [
+	[0,0,3],
+	[0,0,7],
+	[0,1,5],
+	[1,1,2],
+	[0,2,2],
+	[0,2,2],
+	[1,1,2],
+	[0,1,5],
+	[0,0,7],
+	[0,0,3],
+
+]
+
+
 var colClues = CatcolClues;
 var rowClues = CatrowClues;
 var solMatrix = CatsolMatrix;
@@ -124,6 +211,8 @@ function catLevel() {
     colClues = CatcolClues;
     rowClues = CatrowClues;
     solMatrix = CatsolMatrix;
+    puzzlename = "You win! Level 1: Cat"
+    level = "Level 1"
     console.log("cat selected");
     loadGrid();
 }
@@ -139,6 +228,26 @@ function dogLevel() {
     loadGrid();
 }
 
+function fishLevel() {
+    deleteGrid();
+    colClues =FishcolClues;
+    rowClues = FishrowClues;
+    solMatrix = FishsolMatrix;
+    puzzlename = "You win! Level 3: Fish"
+    level = "Level 3"
+    loadGrid();
+}
+
+function penguinLevel() {
+    deleteGrid();
+    colClues =PenguincolClues;
+    rowClues = PenguinrowClues;
+    solMatrix = PenguinsolMatrix;
+    puzzlename = "You win! Level 4: Penguin"
+    level = "Level 4"
+    loadGrid();
+}
+
 puzzlename = "You win! Level 1: Cat"
 level = "Level 1"
 const column = document.getElementById("col2");
@@ -150,19 +259,29 @@ loadGrid()
 const button1 = document.createElement("button");
 button1.textContent = "Clear Grid";
 button1.addEventListener("click", cleargrid);
+document.body.appendChild(button1);
 
 const catlevelB = document.createElement("button");
 catlevelB.textContent = "Level 1";
 catlevelB.addEventListener("click", catLevel);
+document.body.appendChild(catlevelB);
 
 const doglevelB = document.createElement("button");
 doglevelB.textContent = "Level 2";
 doglevelB.addEventListener("click", dogLevel);
-
-
 document.body.appendChild(doglevelB);
-document.body.appendChild(catlevelB);
-document.body.appendChild(button1);
+
+const fishlevelB = document.createElement("button");
+fishlevelB.textContent = "Level 3";
+fishlevelB.addEventListener("click", fishLevel);
+document.body.appendChild(fishlevelB);
+
+const penguinlevelB = document.createElement("button");
+penguinlevelB.textContent = "Level 4";
+penguinlevelB.addEventListener("click", penguinLevel);
+document.body.appendChild(penguinlevelB);
+
+
 // createboxes in the dead space between the 2 clues so everything lines up
 function loadGrid() {
 document.getElementById("myDiv").innerHTML = level;
@@ -311,8 +430,6 @@ function deleteGrid() {
         for (j=0; j<rowCluesNumber; j++) {
             newbutton = document.getElementById("blank" + j +""+i);
             newbutton.remove();
-
-    
             }
         }
     for (var m=0; m<10; m++) {
