@@ -12,7 +12,7 @@
 // maybe run on github pages?
 // make toggle between levels look nice
 
-// fix error in deleting br elements
+
 
 
 document.body.style.backgroundColor = "#F8F8FF";
@@ -201,6 +201,89 @@ const PenguincolClues = [
 
 ]
 
+// camel
+// -----------------------------------------------------------------
+
+const CamelsolMatrix = [  // solution to the puzzle
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+	[0, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+    [0, 1, 1, 0, 0, 1, 1, 1, 0, 0],
+    [0, 1, 1, 0, 0, 1, 1, 1, 0, 0],
+    [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+    [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+    [0, 0, 0, 1, 1, 1, 1, 1, 1, 0],
+    [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+];
+
+const CamelrowClues  = [
+    [0,0],
+	[0,3],
+	[0,2],
+	[2,3],
+	[2,3],
+	[0,7],
+	[0,6],
+	[0,6],
+	[0,8],
+	[0,0],
+]
+
+const CamelcolClues = [
+	[0,0,0],
+	[1,3,1],
+	[0,6,1],
+	[0,2,4],
+	[0,0,4],
+	[0,0,6],
+	[0,0,6],
+	[0,0,6],
+	[0,0,2],
+	[0,0,0],
+
+]
+
+const BeetlesolMatrix = [  // solution to the puzzle
+	[0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+	[0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
+	[0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
+    [0, 0, 0, 1, 0, 0, 1, 0, 0, 0],
+    [1, 0, 1, 0, 0, 0, 0, 1, 0, 1],
+    [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+    [0, 0, 1, 0, 0, 0, 0, 1, 0, 0],
+    [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+    [0, 1, 1, 0, 0, 0, 0, 1, 1, 0],
+    [1, 0, 0, 1, 1, 1, 1, 0, 0, 1],
+];
+
+const BeetlerowClues  = [
+    [0,0,0,6],
+	[0,0,0,2],
+	[0,0,0,4],
+	[0,0,1,1],
+	[1,1,1,1],
+	[0,0,0,8],
+	[0,0,1,1],
+	[0,0,0,6],
+	[0,0,2,2],
+	[0,1,4,1],
+]
+
+const BeetlecolClues = [
+    [0,0,0,1,1],
+	[0,0,0,1,1],
+    [0,0,0,1,5],
+	[1,2,1,1,1],
+	[0,3,1,1,1],
+	[0,3,1,1,1],
+	[1,2,1,1,1],
+	[0,0,0,1,5],
+	[0,0,0,1,1],
+	[0,0,0,1,1],
+
+]
+
 
 var colClues = CatcolClues;
 var rowClues = CatrowClues;
@@ -248,6 +331,26 @@ function penguinLevel() {
     loadGrid();
 }
 
+function CamelLevel() {
+    deleteGrid();
+    colClues =CamelcolClues;
+    rowClues = CamelrowClues;
+    solMatrix = CamelsolMatrix;
+    puzzlename = "You win! Level 5: Camel"
+    level = "Level 5"
+    loadGrid();
+}
+
+function BeetleLevel() {
+    deleteGrid();
+    colClues =BeetlecolClues;
+    rowClues = BeetlerowClues;
+    solMatrix = BeetlesolMatrix;
+    puzzlename = "You win! Level 6: Beetle"
+    level = "Level 6"
+    loadGrid();
+}
+
 puzzlename = "You win! Level 1: Cat"
 level = "Level 1"
 const column = document.getElementById("col2");
@@ -280,6 +383,16 @@ const penguinlevelB = document.createElement("button");
 penguinlevelB.textContent = "Level 4";
 penguinlevelB.addEventListener("click", penguinLevel);
 document.body.appendChild(penguinlevelB);
+
+const camellevelB = document.createElement("button");
+camellevelB.textContent = "Level 5";
+camellevelB.addEventListener("click", CamelLevel);
+document.body.appendChild(camellevelB);
+
+const beetlelevelB = document.createElement("button");
+beetlelevelB.textContent = "Level 6";
+beetlelevelB.addEventListener("click", BeetleLevel);
+document.body.appendChild(beetlelevelB);
 
 
 // createboxes in the dead space between the 2 clues so everything lines up
@@ -424,7 +537,7 @@ function deleteGrid() {
             brElement = document.querySelector('br');
             brElement.remove();
         } catch (error) {
-            console.log(error)  // good - no error
+            console.log(error)
         }
         for (var j=0; j<buttonNames.length; j++) {
             workingMatrix[i][j] = 0;
@@ -433,13 +546,13 @@ function deleteGrid() {
             }
         }
     for (i=0; i<colCluesNumber; i++){   
+        try {
+            brElement = document.querySelector('br');
+            brElement.remove();
+        } catch (error) {
+            console.log(error);
+        }
         for (j=0; j<rowCluesNumber; j++) {
-            try {
-                brElement = document.querySelector('br');
-                brElement.remove();
-            } catch (error) {
-                console.log(error);  // no error
-            }
             newbutton = document.getElementById("blank" + j +""+i);
             newbutton.remove();
             }
@@ -449,7 +562,7 @@ function deleteGrid() {
             brElement = document.querySelector('br');
             brElement.remove();
         } catch (error) {
-            console.log(error); //error
+            console.log(error);
         }
         for (var k =0; k<rowCluesNumber; k++) {
             newbutton = document.getElementById("rowcol0" + k);
@@ -457,6 +570,12 @@ function deleteGrid() {
             }
         }
     for (var m=0; m<colCluesNumber; m++) {
+        try {
+            brElement = document.querySelector('br');
+            brElement.remove();
+        } catch (error) {
+            console.log(error); 
+        }
         for (var k =0; k<10; k++) {
             newbutton = document.getElementById("cluecol0"+ k);
             newbutton.remove();
