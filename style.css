@@ -15,7 +15,26 @@
   text-align: center;
 }
 
-@media(max-width:600px) {
+@media(max-width:650px) {
+
+  .levelSelect {
+    background-color: #F8F8FF;
+    height: 50px;
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .col {
+    width: 9%;
+    background-color: lightgrey;
+    padding: 10px;
+    height: 25px;
+    display: flex;
+    border: solid, #F8F8FF;
+    cursor: pointer;
+    justify-content: center;
+  }
 
 .column1 {
     flex: 40%; /* 30*/
@@ -88,7 +107,25 @@
 /* put rows and columns in buttons that match background so flex correctly*/
 
 
-@media (min-width:600px) {
+@media (min-width:650px) {
+
+  .levelSelect {
+    background-color: #F8F8FF;
+    height: 50px;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .col {
+    width: 9%;
+    background-color: lightgrey;
+    padding: 10px;
+    height: 25px;
+    display: flex;
+    border: solid, #F8F8FF;
+    cursor: pointer;
+  }
 
 
   .column1 {
@@ -140,6 +177,7 @@
   min-height: 35px;
   max-width: 35px;
   max-height:35px;
+  justify-content: center;
 /*  margin-left: 0; 
   margin-right: auto; */
  /* justify-content: center; */

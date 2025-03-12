@@ -1,6 +1,6 @@
 // current to do:
 
-// make colors more appealing
+// make colors more appealing ?
 
 // win condition checker - make visually better?
 
@@ -11,6 +11,7 @@
 // figure out how to get on itch.io
 // maybe run on github pages?
 // make toggle between levels look nice
+// add more levels
 
 
 
@@ -175,7 +176,7 @@ const PenguinsolMatrix = [  // solution to the puzzle
 ];
 
 const PenguinrowClues  = [
-	[0,0,0,0],
+	[0,0,0,' 0'],
 	[0,0,0,4],
 	[0,1,2,1],
 	[1,1,1,1],
@@ -218,7 +219,7 @@ const CamelsolMatrix = [  // solution to the puzzle
 ];
 
 const CamelrowClues  = [
-    [0,0],
+    [0,' 0'],
 	[0,3],
 	[0,2],
 	[2,3],
@@ -227,11 +228,11 @@ const CamelrowClues  = [
 	[0,6],
 	[0,6],
 	[0,8],
-	[0,0],
+	[0,' 0'],
 ]
 
 const CamelcolClues = [
-	[0,0,0],
+	[0,0,' 0'],
 	[1,3,1],
 	[0,6,1],
 	[0,2,4],
@@ -240,7 +241,7 @@ const CamelcolClues = [
 	[0,0,6],
 	[0,0,6],
 	[0,0,2],
-	[0,0,0],
+	[0,0,' 0'],
 
 ]
 
@@ -359,6 +360,18 @@ const buttonNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 
 loadGrid()
 
+const header1 = document.getElementById("header1");
+const header2 = document.getElementById("header2");
+const header3 = document.getElementById("header3");
+const header4 = document.getElementById("header4");
+const header5 = document.getElementById("header5");
+const header6 = document.getElementById("header6");
+const header7 = document.getElementById("header7");
+const header8 = document.getElementById("header8");
+const header9 = document.getElementById("header9");
+const header10 = document.getElementById("header10");
+
+
 const button1 = document.createElement("button");
 button1.textContent = "Clear Grid";
 button1.addEventListener("click", cleargrid);
@@ -367,32 +380,32 @@ document.body.appendChild(button1);
 const catlevelB = document.createElement("button");
 catlevelB.textContent = "Level 1";
 catlevelB.addEventListener("click", catLevel);
-document.body.appendChild(catlevelB);
+header1.appendChild(catlevelB);
 
 const doglevelB = document.createElement("button");
 doglevelB.textContent = "Level 2";
 doglevelB.addEventListener("click", dogLevel);
-document.body.appendChild(doglevelB);
+header2.appendChild(doglevelB);
 
 const fishlevelB = document.createElement("button");
 fishlevelB.textContent = "Level 3";
 fishlevelB.addEventListener("click", fishLevel);
-document.body.appendChild(fishlevelB);
+header3.appendChild(fishlevelB);
 
 const penguinlevelB = document.createElement("button");
 penguinlevelB.textContent = "Level 4";
 penguinlevelB.addEventListener("click", penguinLevel);
-document.body.appendChild(penguinlevelB);
+header4.appendChild(penguinlevelB);
 
 const camellevelB = document.createElement("button");
 camellevelB.textContent = "Level 5";
 camellevelB.addEventListener("click", CamelLevel);
-document.body.appendChild(camellevelB);
+header5.appendChild(camellevelB);
 
 const beetlelevelB = document.createElement("button");
 beetlelevelB.textContent = "Level 6";
 beetlelevelB.addEventListener("click", BeetleLevel);
-document.body.appendChild(beetlelevelB);
+header6.appendChild(beetlelevelB);
 
 
 // createboxes in the dead space between the 2 clues so everything lines up
