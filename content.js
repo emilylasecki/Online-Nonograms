@@ -379,31 +379,37 @@ document.body.appendChild(button1);
 
 const catlevelB = document.createElement("button");
 catlevelB.textContent = "Level 1";
+catlevelB.classList.add("levelStyle");
 catlevelB.addEventListener("click", catLevel);
 header1.appendChild(catlevelB);
 
 const doglevelB = document.createElement("button");
 doglevelB.textContent = "Level 2";
+doglevelB.classList.add("levelStyle");
 doglevelB.addEventListener("click", dogLevel);
 header2.appendChild(doglevelB);
 
 const fishlevelB = document.createElement("button");
 fishlevelB.textContent = "Level 3";
+fishlevelB.classList.add("levelStyle");
 fishlevelB.addEventListener("click", fishLevel);
 header3.appendChild(fishlevelB);
 
 const penguinlevelB = document.createElement("button");
 penguinlevelB.textContent = "Level 4";
+penguinlevelB.classList.add("levelStyle");
 penguinlevelB.addEventListener("click", penguinLevel);
 header4.appendChild(penguinlevelB);
 
 const camellevelB = document.createElement("button");
 camellevelB.textContent = "Level 5";
+camellevelB.classList.add("levelStyle");
 camellevelB.addEventListener("click", CamelLevel);
 header5.appendChild(camellevelB);
 
 const beetlelevelB = document.createElement("button");
 beetlelevelB.textContent = "Level 6";
+beetlelevelB.classList.add("levelStyle");
 beetlelevelB.addEventListener("click", BeetleLevel);
 header6.appendChild(beetlelevelB);
 

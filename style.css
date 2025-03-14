@@ -28,12 +28,25 @@
   .col {
     width: 9%;
     background-color: lightgrey;
-    padding: 10px;
-    height: 25px;
+    height: 40px;
     display: flex;
     border: solid, #F8F8FF;
     cursor: pointer;
     justify-content: center;
+  }
+
+  .levelStyle {
+      width:100%;
+      background-color: silver;
+      height: 100%;
+      border: 0vw, solid, #5c5c5b;
+      cursor: pointer;
+      font-size: 2.3vw;
+  }
+
+  .levelStyle:hover {
+    background-color: lightblue;
+    transition: 0.5s;
   }
 
 .column1 {
@@ -113,18 +126,30 @@
     background-color: #F8F8FF;
     height: 50px;
     display: flex;
-    padding-left: 20px;
-    padding-right: 20px;
+   /* padding-left: 20px;
+    padding-right: 20px; */
   }
 
   .col {
-    width: 9%;
+    width: 10%;
     background-color: lightgrey;
-    padding: 10px;
-    height: 25px;
+    height: 50px;
     display: flex;
     border: solid, #F8F8FF;
     cursor: pointer;
+  }
+
+  .levelStyle {
+    width:100%;
+    background-color: silver;
+    height: 100%;
+    border: 0vw, solid, #5c5c5b;
+    cursor: pointer;
+  }
+
+  .levelStyle:hover {
+    background-color: lightblue;
+    transition: 0.5s;
   }
 
 
