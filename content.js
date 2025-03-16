@@ -1,6 +1,6 @@
 // current to do:
 
-// make colors more appealing ?
+
 
 // win condition checker - make visually better?
 
@@ -8,10 +8,12 @@
 // readme
 // info on page about nonograms and how to play
 // level difficulty rating?
-// figure out how to get on itch.io
-// maybe run on github pages?
-// make toggle between levels look nice
+
+// maybe run on github pages?  -- hosted on netlify!
+
 // add more levels
+// make mobile look better
+//add website title - tab for about page?
 
 
 
