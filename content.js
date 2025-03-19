@@ -372,12 +372,14 @@ const header7 = document.getElementById("header7");
 const header8 = document.getElementById("header8");
 const header9 = document.getElementById("header9");
 const header10 = document.getElementById("header10");
+const clearGrid1 = document.getElementById("clearGrid1");
 
 
 const button1 = document.createElement("button");
 button1.textContent = "Clear Grid";
+button1.classList.add("clearGrid");
 button1.addEventListener("click", cleargrid);
-document.body.appendChild(button1);
+clearGrid1.appendChild(button1);
 
 const catlevelB = document.createElement("button");
 catlevelB.textContent = "Level 1";
