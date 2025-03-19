@@ -15,13 +15,15 @@ Visit the live site <a href="https://online-nonograms.netlify.app/">here</a> to 
 ## To Do
 
 -make the win condition statement look better. popup?
+-add container for current level display
+-try to get hover to work for page select
+-add containers for text on about and how to play pages
+-write about and how to play pages
 -finish the readme
 -tutorial on how to play page
 -level difficulty rating?
 -add 4 more levels
--make mobile look better - still need to do header adjustments
--make header bar look nice - add an image behind instead of color
--website footer?
--fix the right padding issue on the header
+-make header bar look nice - fix the header image
+-make sure it works well on phones - scale down the grid size if needed
 
 

@@ -8,12 +8,8 @@
 // readme
 // info on page about nonograms and how to play
 // level difficulty rating?
-
-// maybe run on github pages?  -- hosted on netlify!
-
 // add more levels
 // make mobile look better
-//add website title - tab for about page?
 
 
 
@@ -433,7 +429,7 @@ for (i=0; i<colCluesNumber; i++){
         button.style.color= "#F8F8FF";
         button.style.backgroundColor="#F8F8FF";
         button.classList.add("buttonInactive");
-        //button.style.borderColor="#F8F8FF";
+        button.style.borderColor="#F8F8FF"; // comment out if don't like
         cluerow.appendChild(button);
     }
 }
@@ -447,6 +443,7 @@ for (var m=0; m<10; m++) {
         button.id = "rowcol0" + k;
         button.textContent = rowClues[m][k];
         button.style.color= "black";
+        button.style.borderColor="#F8F8FF";  //comment out if don't like
         if (button.textContent == "0") {
             button.style.color = "#F8F8FF";
         }
@@ -467,6 +464,7 @@ for (var m=0; m<colCluesNumber; m++) {
         if (button.textContent == "0") {
             button.style.color = "#F8F8FF";
         }
+        button.style.borderColor="#F8F8FF";  //comment out if don't like
         button.style.backgroundColor="#F8F8FF";
         button.classList.add("colInactive");
         column.appendChild(button);
@@ -483,6 +481,7 @@ for (var i =0; i<buttonNames.length; i++) {
         button.textContent = 'X';
         button.classList.add("resize-button");
         button.style.color= "darkgrey";
+        button.style.borderColor="#333";
         button.addEventListener('click', () => {
             if (button.style.backgroundColor == "darkgrey") {
                 button.style.backgroundColor = "black";
