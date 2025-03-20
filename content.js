@@ -283,10 +283,10 @@ const BeetlecolClues = [
 
 ]
 
-
 var colClues = CatcolClues;
 var rowClues = CatrowClues;
 var solMatrix = CatsolMatrix;
+const WinChecker = document.getElementById("WinChecker");
 
 function catLevel() {
     deleteGrid();
@@ -296,6 +296,7 @@ function catLevel() {
     puzzlename = "You win! Level 1: Cat"
     level = "Level 1"
     console.log("cat selected");
+    WinChecker.textContent = level;
     loadGrid();
 }
 
@@ -307,6 +308,7 @@ function dogLevel() {
     puzzlename = "You win! Level 2: Dog"
     level = "Level 2"
     console.log("dog selected");
+    WinChecker.textContent = level;
     loadGrid();
 }
 
@@ -317,6 +319,7 @@ function fishLevel() {
     solMatrix = FishsolMatrix;
     puzzlename = "You win! Level 3: Fish"
     level = "Level 3"
+    WinChecker.textContent = level;
     loadGrid();
 }
 
@@ -327,6 +330,7 @@ function penguinLevel() {
     solMatrix = PenguinsolMatrix;
     puzzlename = "You win! Level 4: Penguin"
     level = "Level 4"
+    WinChecker.textContent = level;
     loadGrid();
 }
 
@@ -337,6 +341,7 @@ function CamelLevel() {
     solMatrix = CamelsolMatrix;
     puzzlename = "You win! Level 5: Camel"
     level = "Level 5"
+    WinChecker.textContent = level;
     loadGrid();
 }
 
@@ -347,11 +352,13 @@ function BeetleLevel() {
     solMatrix = BeetlesolMatrix;
     puzzlename = "You win! Level 6: Beetle"
     level = "Level 6"
+    WinChecker.textContent = level;
     loadGrid();
 }
 
 puzzlename = "You win! Level 1: Cat"
 level = "Level 1"
+WinChecker.textContent = level;
 const column = document.getElementById("col2");
 const cluerow = document.getElementById("col1");
 const buttonNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
@@ -429,7 +436,7 @@ for (i=0; i<colCluesNumber; i++){
         button.style.color= "#F8F8FF";
         button.style.backgroundColor="#F8F8FF";
         button.classList.add("buttonInactive");
-        button.style.borderColor="#F8F8FF"; // comment out if don't like
+        button.style.borderColor="lightgrey"; // comment out if don't like
         cluerow.appendChild(button);
     }
 }
@@ -443,7 +450,7 @@ for (var m=0; m<10; m++) {
         button.id = "rowcol0" + k;
         button.textContent = rowClues[m][k];
         button.style.color= "black";
-        button.style.borderColor="#F8F8FF";  //comment out if don't like
+        button.style.borderColor="lightgrey";  //comment out if don't like
         if (button.textContent == "0") {
             button.style.color = "#F8F8FF";
         }
@@ -464,7 +471,7 @@ for (var m=0; m<colCluesNumber; m++) {
         if (button.textContent == "0") {
             button.style.color = "#F8F8FF";
         }
-        button.style.borderColor="#F8F8FF";  //comment out if don't like
+       button.style.borderColor="lightgrey";  //comment out if don't like
         button.style.backgroundColor="#F8F8FF";
         button.classList.add("colInactive");
         column.appendChild(button);
@@ -529,6 +536,7 @@ for (var i =0; i<buttonNames.length; i++) {
  if (count == 0) {
     console.log("you win!")
     document.getElementById("myDiv").innerHTML=puzzlename;
+    WinChecker.textContent = puzzlename;
     for (var i =0; i<buttonNames.length; i++) {
         for (var j=0; j<buttonNames.length; j++) {
           //  newbutton = document.getElementById("cell"+ i +'' +j);
@@ -542,6 +550,7 @@ for (var i =0; i<buttonNames.length; i++) {
 
 function cleargrid() {
     document.getElementById("myDiv").innerHTML=level;
+    WinChecker.textContent = level;
     for (var i =0; i<buttonNames.length; i++) {
         for (var j=0; j<buttonNames.length; j++) {
             workingMatrix[i][j] = 0;
