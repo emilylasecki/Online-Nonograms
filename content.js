@@ -295,7 +295,7 @@ function catLevel() {
     solMatrix = CatsolMatrix;
     puzzlename = "You win! Level 1: Cat"
     level = "Level 1"
-    console.log("cat selected");
+  //  console.log("cat selected");
     WinChecker.textContent = level;
     loadGrid();
 }
@@ -307,7 +307,7 @@ function dogLevel() {
     solMatrix = DogsolMatrix;
     puzzlename = "You win! Level 2: Dog"
     level = "Level 2"
-    console.log("dog selected");
+  //  console.log("dog selected");
     WinChecker.textContent = level;
     loadGrid();
 }
@@ -423,7 +423,6 @@ header6.appendChild(beetlelevelB);
 
 // createboxes in the dead space between the 2 clues so everything lines up
 function loadGrid() {
-document.getElementById("myDiv").innerHTML = level;
 colCluesNumber = colClues[0].length;
 rowCluesNumber = rowClues[0].length;
 
@@ -495,13 +494,13 @@ for (var i =0; i<buttonNames.length; i++) {
                 button.style.color= "black";
                 var x = (button.id).slice(-1);
                    var y = (button.id).slice(-2, -1);
-                   console.log(x + " " + y);
+                 //  console.log(x + " " + y);
                    workingMatrix[y][x] = 1;
                    checkWin()
                 } else if (button.style.backgroundColor == "black") {
                    var x = (button.id).slice(-1);
                    var y = (button.id).slice(-2, -1);
-                   console.log(x + " " + y);
+                  // console.log(x + " " + y);
                    workingMatrix[y][x] = 0;
                    checkWin()
                    button.style.backgroundColor="grey";
@@ -534,8 +533,7 @@ for (var i =0; i<buttonNames.length; i++) {
 }
 // console.log(count)
  if (count == 0) {
-    console.log("you win!")
-    document.getElementById("myDiv").innerHTML=puzzlename;
+  //  console.log("you win!")
     WinChecker.textContent = puzzlename;
     for (var i =0; i<buttonNames.length; i++) {
         for (var j=0; j<buttonNames.length; j++) {
