@@ -6,7 +6,7 @@ See my previous project's readme <a href="https://github.com/emilylasecki/Nonogr
 
 ## How to play
 
-View the full explanation on nonograms here. (link to the explanation page on the main site)
+View the full explanation on nonograms <a href="https://online-nonograms.netlify.app/howtoplay">here</a>
 
 ## Go to the live site
 
@@ -24,6 +24,5 @@ Visit the live site <a href="https://online-nonograms.netlify.app/">here</a> to 
 -level difficulty rating?
 -add 4 more levels
 -make header bar look nice - fix the header image
--make sure it works well on phones - scale down the grid size
 
 

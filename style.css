@@ -156,14 +156,14 @@ a.hover {  /* not working */
    /* need to find a way to adjust this properly */
    /* display: flex; */
    text-align: right;
-   min-width: 100px;
+   min-width: 80px;
 }
 
 .column2 {
     flex:60%;  /* 70 */
     padding:0px;
     height: 60%;
-    min-width: 300px;
+    min-width: 200px;
 }
   
   /* Clear floats after the columns */
@@ -224,7 +224,7 @@ a.hover {  /* not working */
 }
 
 @media only screen
-and (max-width:650px) 
+and (max-width:665px) 
 and (min-width: 360px) {
 
   .img {
@@ -351,7 +351,7 @@ a.hover {  /* not working */
     flex:60%;  /* 70 */
     padding:0px;
     height: 60%;
-    min-width: 300px;
+    min-width: 250px;
 }
   
   /* Clear floats after the columns */
@@ -422,7 +422,7 @@ a.hover {  /* not working */
 /* put rows and columns in buttons that match background so flex correctly*/
 
 
-@media (min-width:650px) {
+@media (min-width:665px) {
 
   .img {
     width:400px; /* you can use % */
