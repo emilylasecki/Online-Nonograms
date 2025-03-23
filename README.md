@@ -14,7 +14,7 @@ Visit the live site <a href="https://online-nonograms.netlify.app/">here</a> to 
 
 ## To Do
 
--make the win condition statement look better. popup?
+-make the win condition statement look better? popup?
 
 -try to get hover to work for page select
 -add containers for text on about page
