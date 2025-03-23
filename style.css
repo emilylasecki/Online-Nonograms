@@ -35,7 +35,206 @@
   padding:10px;
 }
 
-@media(max-width:650px) {
+@media only screen 
+and (max-width: 360px){
+
+  
+  .img {
+    width:250px; /* you can use % */
+    height: auto;
+    align-items: center;
+    margin:auto;
+    display:block;
+  }
+  
+
+/* create  the header for mobile*/
+.header {
+  height: 160px;
+ /* background-color: lightblue; */
+  background-image: url("backgroundv1.png");  /* will put an image back here instead*/
+  font-size: 10px; 
+  overflow: hidden;
+  min-width: auto;
+  padding: 10px; 
+ /* padding-right: 100px; */
+  margin-left: -10px;
+  margin-top: -10px;
+  position: relative;
+  display: flex;
+  align-content: center;
+  text-align: center;
+  background-size: 100vw; 
+}
+
+
+
+.header b {
+  font-size: calc(25px + 1.32vw);
+  padding-top: 10px;
+  font-style: italic;
+  position: absolute;
+  margin: 0 auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.header a {
+  background: hsla(177, 1%, 99%, .8);  /* fixMe : play around with these colors */
+  text-align: center;
+  padding-left:calc(2px + 3.6vw);
+  padding-right: calc(2px + 3.6vw);
+  display: block; 
+  color: black;
+  text-decoration: none;
+  font-size: calc(.9vw + 11px);
+  height: 50px;
+  padding-top: 10px;
+  position: relative; 
+  top: 100px;
+  display: flex;
+  display: inline-block;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 0 auto;
+}
+
+
+a.active {
+  background-color: white;
+  background: hsla(195, 53%, 79%, 0.9);
+}
+
+a.hover {  /* not working */
+  background-color: yellow !important;
+  color: green !important;
+}
+
+
+
+  .levelSelect {
+    background-color: #F8F8FF;
+    height: 50px;
+    display: flex;
+   padding-left: 10px; 
+    padding-right: 10px;
+  }
+
+  .col {
+    width: 9%;
+    background-color: lightgrey;
+    height: 40px;
+    display: flex;
+    border: solid, #F8F8FF;
+    cursor: pointer;
+    justify-content: center;
+  }
+
+  .levelStyle {
+      width:100%;
+      background-color: silver;
+      height: 100%;
+      border: 0vw, solid, #5c5c5b;
+      cursor: pointer;
+      font-size: 2.3vw;
+      color: black;
+  }
+
+  .levelStyle:hover {
+    background-color: lightblue;
+    transition: 0.5s;
+  }
+
+.column1 {
+    flex: 40%; /* 30*/
+    height: 60%;
+ /*   writing-mode: vertical-rl;
+    text-orientation: upright; */
+   /* need to find a way to adjust this properly */
+   /* display: flex; */
+   text-align: right;
+   min-width: 100px;
+}
+
+.column2 {
+    flex:60%;  /* 70 */
+    padding:0px;
+    height: 60%;
+    min-width: 300px;
+}
+  
+  /* Clear floats after the columns */
+
+.row {
+  display: flex;
+}
+
+.resize-button {
+   /* padding: 1% 1.4%;   /* need to fix this to flex on screen size */
+    cursor: pointer;
+    font-family:monospace;
+    font-size: 1vw;
+    border: 0.1vw, solid, #5c5c5b;
+    min-width: 20px;
+    min-height: 20px;
+    font-size:calc(10px + .2vw);
+  }
+
+.buttonInactive {
+ /* padding: 2.335% 2.7%; */
+  padding: 1.5% 1.8%;
+  cursor: not-allowed;
+  pointer-events: none;
+  font-family:monospace;
+  font-size:calc(10px + .2vw);
+  border: 0.1vw, solid, grey;
+  min-width: 20px;
+  min-height: 20px;
+/*  margin-left: 0; 
+  margin-right: auto; */
+ /* justify-content: center; */
+}
+
+.colInactive {
+ /* padding: .5% 1.4%; */
+  cursor: not-allowed;
+  pointer-events: none;
+  font-family:monospace;
+  font-size:calc(10px + .2vw);
+  border: 0.1vw, solid, grey;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.clearGrid {
+  width:50px;
+  background-color: silver;
+  height: 100%;
+  border: 0vw, solid, #5c5c5b;
+  cursor: pointer;
+  font-size: calc(10px + .3vw);
+  color: black;
+  text-align: center;
+  padding: 0;
+}
+
+}
+
+@media only screen
+and (max-width:650px) 
+and (min-width: 360px) {
+
+  .img {
+    width:300px; /* you can use % */
+    height: auto;
+    align-items: center;
+    margin:auto;
+    display:block;
+  }
+  
 
 /* create  the header for mobile*/
 .header {
@@ -53,7 +252,7 @@
   display: flex;
   align-content: center;
   text-align: center;
-  background-size: 400px;
+  background-size: 100vw; 
 }
 
 
@@ -170,8 +369,8 @@ a.hover {  /* not working */
     min-width: 25px;
     min-height: 25px;
     font-size:calc(11px + .2vw);
-    max-width: 35px;
-  max-height:35px;
+    max-width: 30px;
+  max-height:30px;
   }
 
 .buttonInactive {
@@ -184,8 +383,8 @@ a.hover {  /* not working */
   border: 0.1vw, solid, grey;
   min-width: 25px;
   min-height: 25px;
-  max-width: 35px;
-  max-height:35px;
+  max-width: 30px;
+  max-height:30px;
 /*  margin-left: 0; 
   margin-right: auto; */
  /* justify-content: center; */
@@ -200,8 +399,8 @@ a.hover {  /* not working */
   border: 0.1vw, solid, grey;
   min-width: 25px;
   min-height: 25px;
-  max-width: 35px;
-  max-height:35px;
+  max-width: 30px;
+  max-height:30px;
 }
 
 .clearGrid {
@@ -224,6 +423,15 @@ a.hover {  /* not working */
 
 
 @media (min-width:650px) {
+
+  .img {
+    width:400px; /* you can use % */
+    height: auto;
+    align-items: center;
+    margin:auto;
+    display:block;
+  }
+  
 
   
 .header {
@@ -398,6 +606,18 @@ a.active {
   padding-top:20px;
 }
 
+.about-text p {
+  font-size: calc(14px + .2vw);
+}
+
+.about-text h1 {
+  font-size: calc(20px + .2vw);
+}
+
+.about-text h2 {
+  font-size: calc(17px + .2vw);
+}
+
 .WinChecker {
   padding: 10px;
   text-align: center;
@@ -406,10 +626,3 @@ a.active {
   padding-bottom: 15px;
 }
 
-.img {
-  width:300px; /* you can use % */
-  height: auto;
-  align-items: center;
-  margin:auto;
-  display:block;
-}
