@@ -17,12 +17,12 @@ Visit the live site <a href="https://online-nonograms.netlify.app/">here</a> to 
 -make the win condition statement look better? popup?
 
 -try to get hover to work for page select
--add containers for text on about page
+
 -write about and how to play pages - finish
 -finish the readme
 -tutorial on how to play page -finish
 -level difficulty rating?
--add 4 more levels
+-add 3 more levels
 -make header bar look nice - fix the header image
 
 
