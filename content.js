@@ -1,19 +1,3 @@
-// current to do:
-
-
-
-// win condition checker - make visually better?
-
-
-// readme
-// info on page about nonograms and how to play
-// level difficulty rating?
-// add more levels
-// make mobile look better
-
-
-
-
 document.body.style.backgroundColor = "#F8F8FF";
 
 
@@ -326,6 +310,50 @@ const BeecolClues = [
 
 ]
 
+
+// ---------------------------------------------- 
+// Lion
+
+const LionsolMatrix = [ 
+	[1, 1, 0, 1, 1, 1, 1, 0, 0, 0],
+	[1, 1, 1, 1, 0, 0, 0, 1, 0, 0],
+    [0, 0, 0, 0, 0, 1, 0, 1, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+    [0, 0, 0, 1, 1, 0, 1, 1, 1, 0],
+    [0, 0, 0, 1, 0, 0, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0, 0, 1, 1, 0, 0],
+    [1, 1, 1, 0, 0, 1, 1, 1, 1, 0],
+    [1, 1, 0, 0, 1, 1, 1, 1, 1, 0],
+    [0, 0, 0, 0, 1, 1, 1, 1, 1, 0],
+]
+
+const LionrowClues  = [
+	[2,4],
+	[4,1],
+	[1,2],
+	[0,1],
+	[2,3],
+	[1,3],
+	[0,2],
+	[3,4],
+	[2,5],
+	[0,5],
+]
+
+const LioncolClues = [
+	[0,2,2],
+	[0,2,2],
+	[0,1,1],
+	[0,2,2],
+	[1,1,2],
+	[1,1,3],
+	[0,1,6],
+	[0,0,9],
+	[1,2,3],
+	[0,0," 0"],
+
+]
+
 var colClues = CatcolClues;
 var rowClues = CatrowClues;
 var solMatrix = CatsolMatrix;
@@ -410,6 +438,17 @@ function BeeLevel() {
     loadGrid();
 }
 
+function LionLevel() {
+    deleteGrid();
+    colClues =LioncolClues;
+    rowClues = LionrowClues;
+    solMatrix = LionsolMatrix;
+    puzzlename = "You win! Level 8: Lion"
+    level = "Level 8"
+    WinChecker.textContent = level;
+    loadGrid();
+}
+
 puzzlename = "You win! Level 1: Cat"
 level = "Level 1"
 WinChecker.textContent = level;
@@ -479,6 +518,12 @@ beelevelB.textContent = "Level 7";
 beelevelB.classList.add("levelStyle");
 beelevelB.addEventListener("click", BeeLevel);
 header7.appendChild(beelevelB);
+
+const lionlevelB = document.createElement("button");
+lionlevelB.textContent = "Level 8";
+lionlevelB.classList.add("levelStyle");
+lionlevelB.addEventListener("click", LionLevel);
+header8.appendChild(lionlevelB);
 
 
 // createboxes in the dead space between the 2 clues so everything lines up
