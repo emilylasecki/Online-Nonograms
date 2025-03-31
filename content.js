@@ -354,6 +354,49 @@ const LioncolClues = [
 
 ]
 
+// crow
+// ------------------------------------------------------------
+
+const CrowSolMatrix = [ 
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[0, 0, 0, 0, 0, 0, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0, 0, 1, 0, 1, 1],
+    [0, 0, 0, 0, 1, 1, 1, 1, 1, 0],
+    [0, 0, 0, 1, 1, 1, 1, 1, 1, 0],
+    [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+    [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+    [1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+    [1, 1, 0, 0, 0, 1, 1, 0, 0, 0],
+    [1, 0, 0, 0, 0, 0, 1, 1, 0, 0],
+]
+
+const CrowrowClues  = [
+    [0,' 0'],
+	[0,3],
+	[1,2],
+	[0,5],
+	[0,6],
+	[0,8],
+	[0,7],
+	[0,7],
+	[2,2],
+	[1,2],
+]
+
+const CrowcolClues = [
+	[0,0,3],
+	[0,0,4],
+	[0,0,3],
+	[0,0,4],
+	[0,0,5],
+	[0,0,6],
+	[0,0,9],
+	[1,4,1],
+	[0,0,5],
+	[0,0,1],
+
+]
+
 var colClues = CatcolClues;
 var rowClues = CatrowClues;
 var solMatrix = CatsolMatrix;
@@ -449,6 +492,17 @@ function LionLevel() {
     loadGrid();
 }
 
+function CrowLevel() {
+    deleteGrid();
+    colClues =CrowcolClues;
+    rowClues = CrowrowClues;
+    solMatrix = CrowSolMatrix;
+    puzzlename = "You win! Level 9: Crow"
+    level = "Level 9"
+    WinChecker.textContent = level;
+    loadGrid();
+}
+
 puzzlename = "You win! Level 1: Cat"
 level = "Level 1"
 WinChecker.textContent = level;
@@ -524,6 +578,12 @@ lionlevelB.textContent = "Level 8";
 lionlevelB.classList.add("levelStyle");
 lionlevelB.addEventListener("click", LionLevel);
 header8.appendChild(lionlevelB);
+
+const crowlevelB = document.createElement("button");
+crowlevelB.textContent = "Level 9";
+crowlevelB.classList.add("levelStyle");
+crowlevelB.addEventListener("click", CrowLevel);
+header9.appendChild(crowlevelB);
 
 
 // createboxes in the dead space between the 2 clues so everything lines up
