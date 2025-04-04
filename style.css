@@ -75,7 +75,7 @@ and (max-width: 360px){
 .header {
   height: 160px;
  /* background-color: lightblue; */
-  background-image: url("backgroundv1.png");  /* will put an image back here instead*/
+  background-image: url("backgroundv2.png");  /* will put an image back here instead*/
   font-size: 10px; 
   overflow: hidden;
   min-width: auto;
@@ -293,7 +293,7 @@ and (min-width: 360px) {
 .header {
   height: 200px;
  /* background-color: lightblue; */
-  background-image: url("backgroundv1.png");  /* will put an image back here instead*/
+  background-image: url("backgroundv2.png");  /* will put an image back here instead*/
   font-size: 10px; 
   overflow: hidden;
   min-width: auto;
@@ -524,7 +524,7 @@ a.hover {  /* not working */
   align-items: center;
   margin-left: -10px;
   margin-top: -10px;
-  background-image: url("backgroundv1.png"); 
+  background-image: url("backgroundv2.png"); 
   background-size: 300px;
 }
 

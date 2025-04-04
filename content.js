@@ -397,6 +397,51 @@ const CrowcolClues = [
 
 ]
 
+// ----------------------------
+// Goat
+
+
+const GoatSolMatrix = [ 
+	[1, 1, 1, 1, 0, 0, 1, 1, 1, 1],
+	[1, 0, 0, 1, 1, 1, 1, 0, 0, 1],
+    [1, 0, 1, 0, 0, 0, 0, 1, 0, 1],
+    [0, 0, 1, 1, 0, 0, 1, 1, 0, 0],
+    [1, 1, 1, 0, 0, 0, 0, 1, 0, 0],
+    [0, 0, 1, 0, 0, 0, 0, 1, 0, 0],
+    [0, 0, 1, 0, 1, 1, 0, 1, 0, 0],
+    [0, 0, 0, 1, 0, 0, 1, 1, 0, 0],
+    [0, 0, 0, 1, 0, 0, 1, 1, 0, 0],
+    [0, 0, 0, 0, 1, 1, 0, 1, 0, 0],
+]
+
+
+const GoatrowClues  = [
+	[0,0,4,4],
+	[0,1,4,1],
+	[1,1,1,1],
+	[0,0,2,2],
+	[0,0,3,1],
+	[0,0,1,1],
+	[0,1,2,1],
+	[0,0,1,2],
+	[0,0,1,2],
+	[0,0,2,1],
+]
+
+const GoatcolClues = [
+	[0,3,1],
+	[0,1,1],
+	[0,1,5],
+	[2,1,2],
+	[1,1,1],
+	[1,1,1],
+	[2,1,2],
+	[0,1,8],
+	[0,0,1],
+	[0,0,3],
+
+]
+
 var colClues = CatcolClues;
 var rowClues = CatrowClues;
 var solMatrix = CatsolMatrix;
@@ -503,6 +548,17 @@ function CrowLevel() {
     loadGrid();
 }
 
+function GoatLevel() {
+    deleteGrid();
+    colClues =GoatcolClues;
+    rowClues = GoatrowClues;
+    solMatrix = GoatSolMatrix;
+    puzzlename = "You win! Level 10: Goat"
+    level = "Level 10"
+    WinChecker.textContent = level;
+    loadGrid();
+}
+
 puzzlename = "You win! Level 1: Cat"
 level = "Level 1"
 WinChecker.textContent = level;
@@ -584,6 +640,12 @@ crowlevelB.textContent = "Level 9";
 crowlevelB.classList.add("levelStyle");
 crowlevelB.addEventListener("click", CrowLevel);
 header9.appendChild(crowlevelB);
+
+const goatlevelB = document.createElement("button");
+goatlevelB.textContent = "Level 10";
+goatlevelB.classList.add("levelStyle");
+goatlevelB.addEventListener("click", GoatLevel);
+header10.appendChild(goatlevelB);
 
 
 // createboxes in the dead space between the 2 clues so everything lines up
