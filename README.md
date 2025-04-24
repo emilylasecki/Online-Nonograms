@@ -22,7 +22,7 @@ This website and repository are still in the works. The following is a list for 
 -try to get hover to work for page select <br>
 -finish the readme <br>
 -level difficulty rating? - can I think of a consistent way to rate them rather than just intuition? <br>
--add 3 more levels <br>
--fix the header image with a few more puzzles <br>
+-improve the how to play info and about text<br>
+-how can i make the interface look better? 
 
 

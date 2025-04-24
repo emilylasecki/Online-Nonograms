@@ -87,7 +87,7 @@ and (max-width: 360px){
   display: flex;
   align-content: center;
   text-align: center;
-  background-size: 100vw; 
+  background-size: 100vw;
 }
 
 
@@ -102,6 +102,7 @@ and (max-width: 360px){
   left: 0;
   right: 0;
   margin: auto;
+  text-shadow: 2px 2px #FFFFFF;
 }
 
 .header a {
@@ -320,6 +321,7 @@ and (min-width: 360px) {
   left: 0;
   right: 0;
   margin: auto;
+  text-shadow: 2px 2px #FFFFFF;
 }
 
 .header a {
@@ -533,6 +535,7 @@ a.hover {  /* not working */
   padding: 10px;
   padding-top: 50px;
   font-style: italic;
+  text-shadow: 2px 2px #FFFFFF;
 }
 
 .header a {
