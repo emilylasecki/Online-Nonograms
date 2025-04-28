@@ -102,7 +102,7 @@ and (max-width: 360px){
   left: 0;
   right: 0;
   margin: auto;
-  text-shadow: 2px 2px #FFFFFF;
+  text-shadow: 1px 1px white, -1px -1px white, -1px 1px white, 1px -1px white;
 }
 
 .header a {
@@ -321,7 +321,7 @@ and (min-width: 360px) {
   left: 0;
   right: 0;
   margin: auto;
-  text-shadow: 2px 2px #FFFFFF;
+  text-shadow: 1px 1px white, -1px -1px white, -1px 1px white, 1px -1px white;
 }
 
 .header a {
@@ -535,7 +535,7 @@ a.hover {  /* not working */
   padding: 10px;
   padding-top: 50px;
   font-style: italic;
-  text-shadow: 2px 2px #FFFFFF;
+  text-shadow: 1px 1px white, -1px -1px white, -1px 1px white, 1px -1px white;
 }
 
 .header a {
